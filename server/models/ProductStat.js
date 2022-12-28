@@ -39,7 +39,7 @@ const ProductStatSchema = new mongoose.Schema(
     ],
     dailyData: [
       {
-        data: {
+        date: {
           type: String,
           min: 2,
           max: 100,
