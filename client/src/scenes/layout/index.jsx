@@ -9,8 +9,8 @@ import { useGetUserQuery } from "state/api";
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
-  const userID = useSelector((state) => state.global.userID);
-  const { data } = useGetUserQuery(userID);
+  const userId = useSelector((state) => state.global.userId);
+  const { data } = useGetUserQuery(userId);
   
   return (
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
