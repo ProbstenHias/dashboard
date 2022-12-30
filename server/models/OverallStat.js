@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const OverallStatSchema = new mongoose.Schema(
   {
+    totalCustomers: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
     totalProducts: {
       type: Number,
       min: 0,
