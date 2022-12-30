@@ -3,18 +3,18 @@ import mongoose from "mongoose";
 const ProductStatSchema = new mongoose.Schema(
   {
     productId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product",
       required: true,
-      min: 2,
-      max: 100,
     },
     yearlySalesTotal: {
       type: Number,
       required: true,
       min: 0,
     },
-    yearlyTotalsSold: {
+    yearlyTotalSoldUnits: {
       type: Number,
+      required: true,
       min: 0,
     },
     year: {

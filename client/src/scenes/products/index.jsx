@@ -12,7 +12,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Header from "components/Header";
-import { useGetProcutsQuery } from "state/api";
+import { useGetProductsQuery } from "state/api";
 
 const Product = ({
   _id,
@@ -65,7 +65,9 @@ const Product = ({
         in={isExpanded}
         timeout="auto"
         unmountOnExit
-        sx={{ color: theme.palette.neutral[300] }}
+        sx={{
+          color: theme.palette.neutral[300],
+        }}
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
@@ -74,7 +76,7 @@ const Product = ({
             Yearly Sales This Year: {stat.yearlySalesTotal}
           </Typography>
           <Typography>
-            Yearly Units Sold This Year: {stat.yearlyTotalSoledUnits}
+            Yearly Units Sold This Year: {stat.yearlyTotalSoldUnits}
           </Typography>
         </CardContent>
       </Collapse>
@@ -82,8 +84,8 @@ const Product = ({
   );
 };
 
-function Products() {
-  const { data, isLoading } = useGetProcutsQuery();
+const Products = () => {
+  const { data, isLoading } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
   return (
@@ -98,7 +100,7 @@ function Products() {
           rowGap="20px"
           columnGap="1.33%"
           sx={{
-            "$ > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
           }}
         >
           {data.map(
@@ -131,6 +133,6 @@ function Products() {
       )}
     </Box>
   );
-}
+};
 
 export default Products;

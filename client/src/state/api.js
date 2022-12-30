@@ -19,7 +19,7 @@ export const api = createApi({
       query: (id) => `general/user/${id}`,
       prividesTags: ["User"],
     }),
-    getProcuts: builder.query({
+    getProducts: builder.query({
       query: () => "client/products",
       prividesTags: ["Products"],
     }),
@@ -60,7 +60,7 @@ export const api = createApi({
 
 export const {
   useGetUserQuery,
-  useGetProcutsQuery,
+  useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,
   useGetGeographyQuery,
