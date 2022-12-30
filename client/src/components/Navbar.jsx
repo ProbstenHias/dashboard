@@ -24,7 +24,7 @@ import {
   MenuItem,
 } from "@mui/material";
 
-const Navbar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
+const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
 
@@ -48,7 +48,7 @@ const Navbar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left Side */}
         <FlexBetween>
-          <IconButton onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween

@@ -95,8 +95,8 @@ const navItems = [
 const Sidebar = ({
   user,
   drawerWidth,
-  isSideBarOpen,
-  setIsSideBarOpen,
+  isSidebarOpen,
+  setIsSidebarOpen,
   isNonMobile,
 }) => {
   const { pathname } = useLocation();
@@ -110,10 +110,10 @@ const Sidebar = ({
 
   return (
     <Box component="nav">
-      {isSideBarOpen && (
+      {isSidebarOpen && (
         <Drawer
-          open={isSideBarOpen}
-          onClose={() => setIsSideBarOpen(false)}
+          open={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
           variant="persistent"
           anchor="left"
           sx={{
@@ -136,7 +136,7 @@ const Sidebar = ({
                   </Typography>
                 </Box>
                 {!isNonMobile && (
-                  <IconButton onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
+                  <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <ChevronLeft />
                   </IconButton>
                 )}
@@ -173,7 +173,7 @@ const Sidebar = ({
                     >
                       <ListItemIcon
                         sx={{
-                          marginLeft: "2rem",
+                          ml: "2rem",
                           color:
                             active === lcText
                               ? theme.palette.primary[600]
@@ -182,7 +182,7 @@ const Sidebar = ({
                       >
                         {icon}
                       </ListItemIcon>
-                      <ListItemText primary={text}></ListItemText>
+                      <ListItemText primary={text} />
                       {active === lcText && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
@@ -221,7 +221,10 @@ const Sidebar = ({
                 </Typography>
               </Box>
               <SettingsOutlined
-                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "25px",
+                }}
               />
             </FlexBetween>
           </Box>
