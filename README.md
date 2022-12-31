@@ -37,7 +37,7 @@ Navigate into the server directory and run the following commands:
 
 ```bash
 npm install
-npm rund dev
+npm run dev
 ```
 
 ### Frontend
